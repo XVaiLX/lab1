@@ -1,14 +1,19 @@
-﻿#include <stdio.h>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-	int M[10], i, max=0,min=0;
-	for (i = 0; i < 10; i++) {
-		M[i] = rand();
-		if (max <= M[i])
-			max = M[i];
-		if (min >= M[i])
-			min = M[i];
+	int n, i, max=0,min=0;
+	int* m;
+	printf("Vvedite razmer massiva\n");
+	scanf("%d", &n);
+	m = (int*)malloc(n * sizeof(int));
+	for (i = 0; i < n; i++) {
+		m[i] = rand();
+		if (max <= m[i])
+			max = m[i];
+		if (min >= m[i])
+			min = m[i];
 	}
-	printf("MAX - MIN = %d", max - min);
+	printf("\nMAX - MIN = %d", max - min);
 }
